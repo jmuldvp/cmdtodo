@@ -2,7 +2,7 @@ class Api::UsersController < ApiController
   before_action :authenticated?
 
   def index
-    user = User.all
+    users = User.all
     render json: users, each_serializer: UserSerializer
   end
 
