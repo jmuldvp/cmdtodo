@@ -2,11 +2,11 @@ class Api::ItemsController < ApiController
   before_action :authenticated?
 
   def create
-    list = List.find_by_id(params[:list_id])
-    item = List.item.new(item_params)
+    @list = List.find_by_id(params[:list_id])
+    @item = @list.items.build(item_params)
 
-    if item.save
-      render json: item
+    if @item.save
+      render json: @item
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
     end
