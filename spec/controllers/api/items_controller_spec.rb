@@ -12,9 +12,6 @@ RSpec.describe Api::ItemsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    # it "increases the count of items by 1" do
-    #   expect{post :create, params: {item: {name: "test"}, list_id: the_list.id}}.to change(Item,:count).by(1)
-    # end
   end
 
 end
