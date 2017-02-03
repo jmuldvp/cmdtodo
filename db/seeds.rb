@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!( email: "user@user.com", password: "pas123", password_confirmation: "pas123")
 User.create!( email: "user2@user.com", password: "pas123", password_confirmation: "pas123")
+User.create!( email: "user3@user.com", password: "pas123", password_confirmation: "pas123")
 
 1.times do
   User.create!(
