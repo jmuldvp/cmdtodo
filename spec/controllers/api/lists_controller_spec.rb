@@ -17,9 +17,7 @@ RSpec.describe Api::ListsController, type: :controller do
   describe "DELETE destroy" do
     it "returns HTTP 204 No Content" do
       http_login
-      delete :destroy, user_id: the_user.id, name: the_list.name
-      # delete :destroy, params: {list: {name: "testing"}, user_id: "1000"}
-
+      delete :destroy, params: {id: the_list.id, user_id: the_user.id}
       expect(response).to have_http_status(204)
     end
   end

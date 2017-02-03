@@ -14,8 +14,9 @@ class Api::ListsController < ApiController
 
   def destroy
     begin
-      user = User.find_by_id(params[:user_id])
-      user.list.destroy
+      user = User.find_by(id: params[:user_id])
+      list = user.lists.find_by(id: params[:id])
+      list.destroy
       render :json => {}, :status => :no_content
     rescue ActiveRecord::RecordNotFound
       render :json => {}, :status => :not_found
